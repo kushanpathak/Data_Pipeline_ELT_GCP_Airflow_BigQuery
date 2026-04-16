@@ -33,14 +33,14 @@ with DAG(
         task_id='load_csv_to_bq',
         bucket='bkt-src-healthcare-data', 
         source_objects= ['global_health_data.csv'],  # Path to your file in the bucket
-        destination_project_dataset_table='tt-dev-02.stag_dataset.healthcare_data',  # Replace with your project, dataset, and table name
+        destination_project_dataset_table='tt-dev-02.stag_dataset.healthcare_data',  
         source_format='CSV', 
         allow_jagged_rows=True,
         ignore_unknown_values=True,
         write_disposition='WRITE_TRUNCATE',  
-        skip_leading_rows=1,  # Skip header row
-        field_delimiter=',',  # Delimiter for CSV, default is ','
+        skip_leading_rows=1,  
+        field_delimiter=',', 
         autodetect=True,  
-        #google_cloud_storage_conn_id='google_cloud_default',  # Replace with your Airflow GCP connection ID if not default
-        #bigquery_conn_id='google_cloud_default',  # Replace with your Airflow BigQuery connection ID if not default
+        #google_cloud_storage_conn_id='google_cloud_default',  #  Airflow GCP connection ID if not default
+        #bigquery_conn_id='google_cloud_default',  # Airflow BigQuery connection ID if not default
     )
