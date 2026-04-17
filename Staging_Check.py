@@ -36,8 +36,8 @@ with DAG(
     # Task to check if the file exists in GCS
     check_file_exists = GCSObjectExistenceSensor(
         task_id='check_file_exists',
-        bucket= 'bkt-src-healthcare-data',  # Replace with your bucket name
-        object='global_health_data.csv',  # Replace with the file path in the bucket
+        bucket= 'bkt-src-healthcare-data',  
+        object='global_health_data.csv',  
         timeout=300,  # Maximum wait time in seconds
         poke_interval=30,  # Time interval in seconds to check again
         mode='poke',  # Use 'poke' mode for synchronous checking
@@ -48,7 +48,7 @@ with DAG(
         task_id='load_csv_to_bq',
         bucket='bkt-src-healthcare-data',  # Replace with your bucket name
         source_objects=['global_health_data.csv'],  # Path to your file in the bucket
-        destination_project_dataset_table= 'tt-dev-02.stag_dataset.healthcare_data',  # Replace with your project, dataset, and table name
+        destination_project_dataset_table= 'tt-dev-02.stag_dataset.healthcare_data',  
         source_format='CSV', 
         allow_jagged_rows=True,
         ignore_unknown_values=True,
