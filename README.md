@@ -201,6 +201,15 @@ FINAL PIPELINE
 
 ---
 
+Looker Report Screen Shot
+
+
+<img width="883" height="696" alt="image" src="https://github.com/user-attachments/assets/75b79e11-2988-4ced-8850-b083c8df3e10" />
+
+
+
+
+
 ## 🔥 Learnings
 
 * Built production-style Airflow DAG with sensors and operators
@@ -219,6 +228,8 @@ FINAL PIPELINE
 * Integrate real-time streaming data
 
 ---
+
+
 
 ## 👤 Author
 
